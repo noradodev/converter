@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 40%;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .converter__container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 10px;
+        }
+
+        .input__form {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .input-field {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            border: 1px solid #ccc;
+            padding: 10px;
+            outline: none;
+        }
+
+        .temperature-label {
+
+            color: #000;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .equals-sign {
+            color: #000;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .result {
+            color: #000;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .title {
+            text-align: center;
+        }
+
+        span.title_u {
+            text-decoration: underline;
+        }
+
+        span.o {
+            font-size: 10px;
+            vertical-align: text-top;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">Temperature in degrees <span class="title_u">Fahrenheit</span> to Temperature in degrees
+            <span class="title_u"> Celsius
+                Coverter</span>
+        </h1>
+        <div class="converter__container">
+
+            <div class="input__form">
+                <input type="number" id="input_type" placeholder="Enter Fahrenheit" class="input-field">
+                <h1 class="temperature-label"><span class="o">o</span>F</h1>
+                <h1 class="equals-sign">=</h1>
+                <input type="number" id="result" disabled class="input-field" placeholder="Result Here">
+                <h1 class="temperature-label"><span class="o">o</span>C</h1>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script>
+        const inputForm = document.getElementById("input_type");
+        const resultEl = document.getElementById("result")
+        // console.log("inputForm", inputForm, "Result", resultEl)
+        inputForm.addEventListener("keyup", () => {
+            // console.log("this work :", inputForm.value)
+            if (inputForm.value == "") {
+                resultEl.value = "enpty";
+            } else {
+                const resultOfConvert = (inputForm.value - 32) * (5 / 9);
+                resultEl.value = resultOfConvert;
+
+            }
+
+
+
+
+
+
+        });
+
+
+    </script>
+</body>
+
+</html>
